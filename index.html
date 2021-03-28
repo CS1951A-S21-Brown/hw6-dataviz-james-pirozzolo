@@ -7,22 +7,100 @@
         <link rel="stylesheet" href="main.css"/>
         <!--Feel free to add more CSS files as needed-->
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
+</head>
 <body>
     <div class="header">
-        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+        <h3 style="color:#E0F2E9">A Visualization of Video Game Success (Please view on chrome)<a href="https://www.kaggle.com/gregorut/videogamesales">  Data</a></h3> 
+        
     </div>
-    <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
-    <div class="row">
-        <div class="col-lg-6">
-            <div id="graph1"></div>
-            <div id="graph2"></div><br/>
+    <div class="graph-container top" id="barchart">
+        <div class="map-title">Favorite Game By Year (1995 - 2016)</div>
+        <div class="slider_container" id="#slider-cont">
+            <input class="slider" type="range" min="1995" max="2016" step="1" value="2005" onchange="setData(this.value); this.nextElementSibling.value = this.value">
+            <output>2006</output>
+            <div class="percentiles">
+                <p id="#yr">Sales Percentiles in 2006</p>
+                <p id="#25"></p>
+                <p id="#50"></p>
+                <p id="#75"></p>
+                <p id="#90"></p>
+                <p id="#99"></p>
+            </div>
         </div>
-        <div class="col-lg-6">
-            <div id="graph3"></div>
-        </div>
+        <script type="text/javascript" src="bar_chart.js"></script>
     </div>
-    <!--Feel free to add more JavaScript files as needed-->
-    <script type="text/javascript" src="main.js"></script>
+    <div class="graph-container mid" id="map">
+        <div class="map-title">Favorite Game Genres Around the World (Hover over map)</div>
+        <script type="text/javascript" src="map.js"></script>
+    </div>
+    <div class="graph-container bottom" id="pie">
+        <div class="map-title">Top Publishers By Genre (Hover over chart)
+            <select class="pick-genre" id="#genre" onchange="drawPie(this.value)">
+                <option value="Sports">Sports</option>
+                <option value="Platform">Platform</option>
+                <option value="Racing">Racing</option>
+                <option value="Role-Playing">Role-Playing</option>
+                <option value="Puzzle">Puzzle</option>
+                <option value="Misc">Misc</option>
+                <option value="Shooter">Shooter</option>
+                <option value="Simulation">Simulation</option>
+                <option value="Action">Action</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Strategy">Strategy</option>
+            </select>
+        </div>
+        <script type="text/javascript" src="pie.js"></script>
+        
+    </div>
+    <div class="writtens">
+        <div class="map-title">Written Questions</div>
+        <ol type="1">
+            <li>Describe how your dashboard answers the questions presented:<br>
+                The top graph is a bar chart that clearly displays the top ten video games by global sales in the selected year. 
+                The second graph is a map that, when hovered over, tells the user the top genre in the region being hovered over.
+                The last graph is a pie chart that displays the top publishers for the specified genre. From this, the user can 
+                easily find the top publisher based on the largest piece of the pie (I understand that pie charts are often 
+                criticized as it can be difficult to compare pie slices but in this case I believe that it effectively answers
+                the question).</li>
+            <li>List 3 reasons why D3 was helpful and improved your visualization:
+                <ol type="i">
+                    <li>It made it possible to dynamically update the charts based on user input</li>
+                    <li>It gave me more ability to customize my graphs than any software/tool I have ever used</li>
+                    <li>I was able to use d3 resources to make a map in which each country correlated to particular data</li>
+                </ol>
+            </li>
+            <li>
+                <ol type="i">
+                    <li>If I just needed to make something quickly I wouldn't use d3</li>
+                    <li>For a static dataset, d3 might be overkill</li>
+                    <li>It might not be the best if interaction with the visualization wasn't relevant</li>
+                </ol>
+            </li>
+            <li>In general, I think that my dashboard does a good job of addresssing some of the concepts discussed in the readings.
+                The color scheme was selected to be accessible to color blind individuals and my visualizations are self-explanatory 
+                and, in my opinion, are effective at conveying their respective data. With that being said, my page would not be
+                accessible to a screen reader. I did not put in text descriptions or alt text in order to allow a screen reader to 
+                effectively convey my page to a blind person or other individuals who require the use of sound instead of sight. 
+                Additionally, as all of my graphs rely on popups that occur when sections are hovered over, my visualization is not 
+                well suited to those who may not understand what the popup tells the user (although I believe they are pretty self-
+                explanatory). One other aspect in which my dataviz is accessible is because I give the user access to the raw data 
+                through a link in the header.
+            </li>
+            <li>
+                I think I did a solid job at designing my dashboard with accessibility in mind. There are two things that I would've 
+                changed. When planning my dashboard, I thought that popups would be the most effective way to convey specific data 
+                about sections on my visualizations. In hindsight, I think that the popups are effective to those who understand what 
+                they are trying to show. At the same time, I find them somewhat distracting (especially with the map as I had to specify 
+                by country, not continent so europe, for example, is represented as all of its countries.) Even though I had thought 
+                this would be an effective way to make my dashboard clean yet informative, I definitely should have thought of a more 
+                effective method, but all in all I am content with them as a straightforward way to demonstrate the data. Lastly, 
+                this seems like a good place to mention this, but I could not for the life of me change the color of the axis labels 
+                on the top chart to the color scheme of the rest. This is not necessarily an accessibility issue, but I felt the need 
+                to mention it here as it is an aspect of my dashboard that if I was doing again I would change.
+            </li>
+        </ol>
+    </div>
+
 </body>
 </html>

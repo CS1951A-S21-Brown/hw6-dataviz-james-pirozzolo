@@ -9,4 +9,118 @@
     text-align: center;
 }
 
+
+.graph-container {
+    width: 100%;
+    height: 350px;
+    
+}
+
+.top {
+  border-bottom: 2px black solid;
+  height: 400px;
+}
+
+.mid {
+  border-bottom: 2px black solid;
+  height: 500px;
+}
+
+.bottom {
+  height: 500px;
+  border-bottom: 2px black solid;
+}
+
+.slider_container {
+    width: 25%;
+    margin-left: 50px;
+    height:0px;
+    display: block;
+    
+}
+
+.slider {
+    margin: 8px;
+    float:left;
+    background: #A17C6B;
+    border: solid 1px #E0F2E9;
+    border-radius: 8px;
+    height: 20px;
+    width: 200px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+a {
+  color: #E0F2E9;
+}
+
+select {
+  background: #5B7B7A;
+  border: 2px black solid;
+  border-radius: 10%;
+  color: #E0F2E9;
+  outline: none;
+}
+
+output {
+    float: left;
+    color: #E0F2E9;
+}
+
+text {
+  color: #E0F2E9;
+}
+
+.popup {
+    position: absolute;
+    display: none;
+    min-width: 80px;
+    height: auto;
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #6F257F;
+    border-radius: 25%;
+    padding: 14px;
+    text-align: center;
+    color: #E0F2E9;
+  }
+
+.map-title {
+  text-align: center;
+  font-size: 2vw;
+  margin-top: 2%;
+}
+
+rect {
+  border: 1px solid black;
+}
+
+rect:hover {
+    opacity: 0.8;
+}
+
 /* Include any custom CSS styling here! */
+
+  body {
+    background-color: #3C887E;
+    color: #E0F2E9;
+  }
+  text {
+    color: #E0F2E9;
+  }
+  
+  .percentiles {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    float: left;
+    padding: 10px;
+    margin: 15px;
+    background: #5B7B7A;
+    box-shadow: 5px 10px black ;
+    border-radius: 10%;
+  }
+
+  path:hover {
+    opacity: 0.8;
+  }
